@@ -1,0 +1,13 @@
+project directory (typically project name)
+    src (source code directory)
+        assets
+            textures (image files ".png", ".jpg")
+            sounds (sound files ".wav")
+            music (music files ".mp3")
+            json (JSON files / levels ".json")
+            tmx (TMX levels ".tmx")
+            text (text files ".txt")
+            data (binary data files with custom extensions)
+            ui/css (stylesheets for customizing UI elements)
+            ui/fonts (fonts ".ttf", ".otf")
+        (your packages / code)
