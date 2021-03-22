@@ -28,6 +28,7 @@ public class BattleShipApp extends GameApplication {
         gameSettings.setTitle("BattleShip_FXGL");
         gameSettings.setVersion("0.1");
         gameSettings.setMainMenuEnabled(true);
+        gameSettings.setGameMenuEnabled(true);
 
         gameSettings.setSceneFactory(new SceneFactory(){
             @Override
