@@ -14,7 +14,6 @@ import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.entity.Entity;
 
 import com.almasb.fxgl.input.Input;
-import fi.utu.tech.gui.javafx.collision.HitShipHandler;
 import fi.utu.tech.gui.javafx.components.BlueTeamComponent;
 import fi.utu.tech.gui.javafx.components.RedTeamComponent;
 import fi.utu.tech.gui.javafx.components.ShipComponent;
