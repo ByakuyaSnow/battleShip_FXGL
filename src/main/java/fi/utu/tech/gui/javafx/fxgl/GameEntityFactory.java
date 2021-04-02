@@ -7,12 +7,15 @@ import com.almasb.fxgl.entity.EntityFactory;
 import com.almasb.fxgl.entity.SpawnData;
 import com.almasb.fxgl.entity.Spawns;
 import com.almasb.fxgl.entity.components.CollidableComponent;
+import com.almasb.fxgl.particle.ParticleComponent;
 import fi.utu.tech.gui.javafx.fxgl.components.*;
 import fi.utu.tech.gui.javafx.fxgl.components.*;
 import javafx.geometry.Point2D;
+import javafx.util.Duration;
 
-import static com.almasb.fxgl.dsl.FXGLForKtKt.entityBuilder;
-import static com.almasb.fxgl.dsl.FXGLForKtKt.getInput;
+import static com.almasb.fxgl.dsl.FXGL.entityBuilder;
+import static com.almasb.fxgl.dsl.FXGL.texture;
+import static com.almasb.fxgl.dsl.FXGLForKtKt.*;
 
 public class GameEntityFactory implements EntityFactory {
 
@@ -266,6 +269,29 @@ public class GameEntityFactory implements EntityFactory {
                 .build();
     }
 
+    @Spawns("explosion")
+    public Entity newExplosion(SpawnData data){
+
+        var texture = texture("sprites/explosion.png");
+
+        return entityBuilder()
+                .from(data)
+                .view(texture.toAnimatedTexture(16, Duration.seconds(0.66)).play())
+                .with(new ExpireCleanComponent(Duration.seconds(0.66)))
+                .build();
+    }
+
+    @Spawns("hit_effect")
+    public Entity newHitEffect(SpawnData data){
+        Point2D pos = getInput().getMousePositionWorld();
+        var texture = texture("sprites/hit_effect.png");
+
+        return entityBuilder(data)
+                .at(pos)
+                .view(texture.toAnimatedTexture(7,Duration.seconds(0.33)).play())
+                .with(new ExpireCleanComponent(Duration.seconds(0.33)))
+                .build();
+    }
 
 
 

@@ -4,7 +4,7 @@
 
 # BattleShip_FXGL
 
-A [classic board game](https://en.wikipedia.org/wiki/Battleship_(game)) built with [FXGL](http://almasb.github.io/FXGLGames/) <br>
+This Java Code implement a [classic board game](https://en.wikipedia.org/wiki/Battleship_(game)) built with [FXGL](http://almasb.github.io/FXGLGames/) <br>
 
 Game Setup(inc players'name, grid_size, amount of ships) is set in customize menu.<br>
 Game start when size of ships less than 50% of total grid. <br>
@@ -12,11 +12,13 @@ Game start when size of ships less than 50% of total grid. <br>
 Shooting is done by a left click. <br>
 You can quit game any time in game with ESC.
 
+
 ### Construction
 package "components" contain all game objects <br>
 package "menu" describe the customize menu<br>
 package "subscene" present 4 different scene in game
 package "userAction" define the behavior of game action
+
 
 ### Contribution
 Aowen Shi(521077) <br>

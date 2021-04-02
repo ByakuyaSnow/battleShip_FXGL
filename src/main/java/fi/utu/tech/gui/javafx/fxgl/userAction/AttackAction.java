@@ -1,6 +1,7 @@
 package fi.utu.tech.gui.javafx.fxgl.userAction;
 
 import com.almasb.fxgl.entity.Entity;
+import com.almasb.fxgl.entity.Spawns;
 import com.almasb.fxgl.input.UserAction;
 import fi.utu.tech.gui.javafx.fxgl.BattleShipApp;
 import fi.utu.tech.gui.javafx.fxgl.components.ShipComponent;
@@ -51,7 +52,11 @@ public class AttackAction extends UserAction {
         getGameWorld().getEntitiesByComponent(ShipComponent.class).forEach(entity -> {
 
             if(isTheresShip(mousePos,entity)){
+
+                var correctPos = new Point2D(mousePos.getX()-50,mousePos.getY()-50);
+
                 spawn("hit");
+                spawn("explosion",correctPos);
                 play("hit.wav");
                 BattleShipApp.canContinue = true;
                 entity.getComponent(ShipComponent.class).hit();

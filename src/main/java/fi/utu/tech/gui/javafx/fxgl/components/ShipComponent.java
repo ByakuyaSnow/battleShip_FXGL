@@ -7,6 +7,7 @@ import javafx.event.EventHandler;
 import javafx.scene.input.KeyEvent;
 
 import static com.almasb.fxgl.dsl.FXGL.*;
+import static com.almasb.fxgl.dsl.FXGLForKtKt.spawn;
 
 public class ShipComponent extends Component {
 
