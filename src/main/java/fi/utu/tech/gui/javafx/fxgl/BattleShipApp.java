@@ -71,7 +71,7 @@ public class BattleShipApp extends GameApplication {
         gameSettings.setTitle("BattleShip_FXGL");
         gameSettings.setVersion("0.1");
 
-        //gameSettings.setIntroEnabled(true);
+        gameSettings.setIntroEnabled(true);
         gameSettings.setFullScreenAllowed(true);
         gameSettings.setFullScreenFromStart(true);
         gameSettings.setMainMenuEnabled(true);
@@ -94,7 +94,7 @@ public class BattleShipApp extends GameApplication {
     @Override
     protected void onPreInit() {
         FXGL.getSettings().setGlobalMusicVolume(0.2);
-        FXGL.getSettings().setGlobalSoundVolume(0.5);
+        FXGL.getSettings().setGlobalSoundVolume(0.4);
         FXGL.loopBGM("CrashedShip.mp3");
     }
 
