@@ -113,7 +113,7 @@ public class BattleShipMainMenu extends FXGLMenu {
 
 
         ChoiceBox<Integer> carrierChoice = new ChoiceBox<>();
-        carrierChoice.getItems().addAll(1,2,3);
+        carrierChoice.getItems().addAll(0,1,2,3);
         carrierChoice.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Integer>() {
             @Override
             public void changed(ObservableValue<? extends Integer> observableValue, Integer integer, Integer t1) {
@@ -129,7 +129,7 @@ public class BattleShipMainMenu extends FXGLMenu {
 
 
         ChoiceBox<Integer> battleshipChoice = new ChoiceBox<>();
-        battleshipChoice.getItems().addAll(1,2,3);
+        battleshipChoice.getItems().addAll(0,1,2,3);
         battleshipChoice.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Integer>() {
             @Override
             public void changed(ObservableValue<? extends Integer> observableValue, Integer integer, Integer t1) {
@@ -145,7 +145,7 @@ public class BattleShipMainMenu extends FXGLMenu {
 
 
         ChoiceBox<Integer> cruiserChoice = new ChoiceBox<>();
-        cruiserChoice.getItems().addAll(1,2,3);
+        cruiserChoice.getItems().addAll(0,1,2,3);
         cruiserChoice.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Integer>() {
             @Override
             public void changed(ObservableValue<? extends Integer> observableValue, Integer integer, Integer t1) {
@@ -161,7 +161,7 @@ public class BattleShipMainMenu extends FXGLMenu {
 
 
         ChoiceBox<Integer> submarineChoice = new ChoiceBox<>();
-        submarineChoice.getItems().addAll(1,2,3);
+        submarineChoice.getItems().addAll(0,1,2,3);
         submarineChoice.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Integer>() {
             @Override
             public void changed(ObservableValue<? extends Integer> observableValue, Integer integer, Integer t1) {
@@ -177,7 +177,7 @@ public class BattleShipMainMenu extends FXGLMenu {
 
 
         ChoiceBox<Integer> destroyerChoice = new ChoiceBox<>();
-        destroyerChoice.getItems().addAll(1,2,3);
+        destroyerChoice.getItems().addAll(0,1,2,3);
         destroyerChoice.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Integer>() {
             @Override
             public void changed(ObservableValue<? extends Integer> observableValue, Integer integer, Integer t1) {
@@ -232,11 +232,18 @@ public class BattleShipMainMenu extends FXGLMenu {
             int destroyOccupied = state.getInt("DESTROYER_AMOUNT") * 2;
             int totalOccupied = carrierOccupied + battleshipOccupied + cruiserOccupied + submarineOccupied + destroyOccupied;
 
+            if(totalOccupied==0){
+                return false;
+            }
+
             if (boardLength * boardLength <= totalOccupied * 2) {
                 return true;
             } else {
                 return false;
             }
+
+
+
         }catch (Exception e){
             return true;
         }

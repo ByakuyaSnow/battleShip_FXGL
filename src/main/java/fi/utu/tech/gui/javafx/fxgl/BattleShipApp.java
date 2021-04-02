@@ -221,42 +221,46 @@ public class BattleShipApp extends GameApplication {
 
     private void nextScene() {
 
-        if(sceneIndex==1){
-            getDialogService().showConfirmationBox("Do you want to start BLUE_TURN?",answer->{
-                if(answer){
-                    //getSceneService().pushSubScene(new BluePlayerScene());
-                    getSceneService().pushSubScene(blueScene);
-                    getSceneService().popSubScene();
-                    sceneIndex = 0;
-                }
-            });
-        }else if(sceneIndex==0){
-            getDialogService().showConfirmationBox("Do you want to start RED_TURN",answer->{
-                if(answer){
-                    //getSceneService().pushSubScene(new RedPlayerScene());
-                    getSceneService().pushSubScene(redScene);
-                    getSceneService().popSubScene();
-                    sceneIndex = 1;
-                }
-            });
-        }else if(sceneIndex==-1){
-            getDialogService().showConfirmationBox("Deploy your ships_2",answer->{
-                if(answer){
-                    //getSceneService().pushSubScene(new RedPlayerDeployScene());
-                    getSceneService().pushSubScene(redDeployScene);
-                    getSceneService().popSubScene();
-                    sceneIndex = 0;
-                }
-            });
-        }else if(sceneIndex==-2){
-            getDialogService().showConfirmationBox("Deploy your ships_1",answer->{
-                if(answer){
-                    //getSceneService().pushSubScene(new BluePlayerDeployScene());
-                    getSceneService().pushSubScene(blueDeployScene);
-                    getSceneService().popSubScene();
-                    sceneIndex = -1;
-                }
-            });
+        try {
+            if(sceneIndex==1){
+                getDialogService().showConfirmationBox("Do you want to start BLUE_TURN?",answer->{
+                    if(answer){
+                        //getSceneService().pushSubScene(new BluePlayerScene());
+                        getSceneService().pushSubScene(blueScene);
+                        getSceneService().popSubScene();
+                        sceneIndex = 0;
+                    }
+                });
+            }else if(sceneIndex==0){
+                getDialogService().showConfirmationBox("Do you want to start RED_TURN",answer->{
+                    if(answer){
+                        //getSceneService().pushSubScene(new RedPlayerScene());
+                        getSceneService().pushSubScene(redScene);
+                        getSceneService().popSubScene();
+                        sceneIndex = 1;
+                    }
+                });
+            }else if(sceneIndex==-1){
+                getDialogService().showConfirmationBox("Deploy your ships_2",answer->{
+                    if(answer){
+                        //getSceneService().pushSubScene(new RedPlayerDeployScene());
+                        getSceneService().pushSubScene(redDeployScene);
+                        getSceneService().popSubScene();
+                        sceneIndex = 0;
+                    }
+                });
+            }else if(sceneIndex==-2){
+                getDialogService().showConfirmationBox("Deploy your ships_1",answer->{
+                    if(answer){
+                        //getSceneService().pushSubScene(new BluePlayerDeployScene());
+                        getSceneService().pushSubScene(blueDeployScene);
+                        getSceneService().popSubScene();
+                        sceneIndex = -1;
+                    }
+                });
+            }
+        }catch (IllegalArgumentException e){
+
         }
 
 
@@ -275,6 +279,8 @@ public class BattleShipApp extends GameApplication {
         getGameWorld().addEntityFactory(new GameEntityFactory());
 
         PropertyMap state = getWorldProperties();
+
+        this.sceneIndex = -2;
 
         spawn("background");
         var container =  spawn("shipContainer",1600,200);
