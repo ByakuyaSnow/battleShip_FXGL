@@ -21,10 +21,13 @@ package "userAction" define the behavior of game action
 
 
 ### Contribution
+(Group members have done equal contributions to this project.)
+
 Aowen Shi(521077) <br>
 Jiachen Yao(521078)<br>
 Bowen Hu(521079) <br>
 Guanghang Chen(521084)<br>
+
 
 ### Credit
 https://github.com/AlmasB/FXGL <br>
