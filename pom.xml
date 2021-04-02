@@ -39,7 +39,7 @@
                     <launcher>Start-game</launcher>
                     <jlinkImageName>mygame</jlinkImageName>
                     <jlinkZipName>mygame</jlinkZipName>
-                    <mainClass>fi.utu.tech.gui.javafx.BattleShipApp</mainClass>
+                    <mainClass>fi.utu.tech.gui.javafx.fxgl.BattleShipApp</mainClass>
                 </configuration>
 
 
